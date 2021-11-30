@@ -18,3 +18,54 @@ library(sf)
 library(janitor)
 ```
 
+## Cool & Sometimes Useful Stuff
+
+### Use the function 'beep()' in the beepr package to make an audio alert when your code is done running.
+
+#### Sounds 1 - 15
+
+```{r, eval = FALSE}
+
+# create sequence of 99 down to 1
+
+for(i in rev(seq(1:99))) {
+  
+  print(paste(i, "bottles of beer on the wall"))
+
+} 
+
+# beep(4)
+```
+
+
+### praise and cowsay
+
+Packages built with a single purpose: to be kind and fun
+
+```{r}
+
+praise("${Exclamation}, ${EXCLAMATION}...${exclamation}!!!!")
+
+praise("Holy ${creating}, Batman - this code is ${adjective}")
+```
+Use cowsay::say to make a character say something to you
+
+```{r}
+
+say("WOW!", by = "spider")
+```
+
+## Make .Rmd a git repo... usethis::use_git()
+
+## usethis::use_github() to open and edit new repo
+
+## Use paletteer to access thousands of color palettes
+
+```{r}
+
+storms %>% 
+  group_by(name) %>% 
+  summarize(min_pressure = min(pressure, na.rm = TRUE)) %>% 
+  slice_min(n = 10, min_pressure)
+```
+
